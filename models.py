@@ -67,3 +67,4 @@ class Orders(BaseModel):
     total_pur_price = DecimalField(max_digits=12, decimal_places=2, null= False, default=0.0)
     customer = ForeignKeyField(User)
 
+"""Конец"""

@@ -43,6 +43,7 @@ try:
     """Изменить характеристики товара"""
     # GoodsSelector.change_goods_char('color')
 
+    """Добавить товар в корзину"""
     # ShoppingCardSelector.add_to_card(4, 1)
     # ShoppingCardSelector.see_card()
     # ShoppingCardSelector.del_from_card()
