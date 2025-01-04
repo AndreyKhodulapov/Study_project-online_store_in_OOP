@@ -109,8 +109,3 @@ class UserSelector:
         del_query = User.delete().where(User.user_id == auth_data['user_id'])
         del_query.execute()
         print('Ваш профиль был успешно удален')
-
-# UserSelector.add_new_user()
-print(UserSelector.log_in())
-# change_user_info(parameter='password')
-# UserSelector.del_user()

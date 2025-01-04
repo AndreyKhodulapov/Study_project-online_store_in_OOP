@@ -1,4 +1,4 @@
-name = "BankAccount"
+name = "BankAccountSelector"
 
 from my_study_projects_2.models import BankAccount
 from decimal import Decimal, DecimalException

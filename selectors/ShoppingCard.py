@@ -77,9 +77,3 @@ class ShoppingCardSelector:
         print('Спасибо за покупку!')
 
 
-# ShoppingCardSelector.add_to_card(4, 1)
-# ShoppingCardSelector.see_card()
-# ShoppingCardSelector.del_from_card()
-# print(ShoppingCardSelector.total_price())
-# ShoppingCardSelector.total_amount()
-# ShoppingCardSelector.buy_from_card()

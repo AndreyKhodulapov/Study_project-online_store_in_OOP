@@ -2,29 +2,45 @@ NAME = """Модуль для работы с функционалом мага�
 
 try:
     from peewee import *
-    from peewee import OperationalError
-    from selectors.BankAccount import *
-    from selectors.GoodType import *
-    from selectors.User import *
-    from selectors.Goods import *
-    from selectors.ShoppingCard import *
-    from selectors.Orders import *
+    from BankAccount import BankAccountSelector
+    from GoodType import GoodTypeSelector
+    from User import UserSelector
+    from Goods import GoodsSelector
+    from ShoppingCard import ShoppingCardSelector
+    from Orders import OrdersSelector
+
 
     """Добавить банковский аккаунт для оплаты"""
-    BankAccountSelector.add_new_account()
+    # BankAccountSelector.add_new_account()
 
     """Удалить банковский аккаунт для оплаты"""
     # BankAccountSelector.del_bank_acc(1)
 
+    """"""
     # GoodTypeSelector.add_new_type()
-    GoodTypeSelector.get_all_rows_type()
+
+    """"""
+    # GoodTypeSelector.get_all_rows_type()
+
+    """"""
     # GoodTypeSelector.get_row_type()
+
+    """"""
     # GoodTypeSelector.see_goods_in_type()
+
+    """"""
     # GoodTypeSelector.del_type()
 
+    """"""
     # UserSelector.add_new_user()
+
+    """"""
     # print(UserSelector.log_in())
+
+    """"""
     # change_user_info(parameter='password')
+
+    """"""
     # UserSelector.del_user()
 
     """Добавить новую позицию в ассортимент магазина"""
@@ -35,7 +51,7 @@ try:
 
     """Выполнить поиск по ассортименту"""
     # GoodsSelector.search()
-    #
+
     """Удалить товар из ассортимента"""
     # GoodsSelector.delete_goods()
 
@@ -44,10 +60,20 @@ try:
 
     """Добавить товар в корзину"""
     # ShoppingCardSelector.add_to_card(4, 1)
+
+    """"""
     # ShoppingCardSelector.see_card()
+
+    """"""
     # ShoppingCardSelector.del_from_card()
+
+    """"""
     # print(ShoppingCardSelector.total_price())
+
+    """"""
     # ShoppingCardSelector.total_amount()
+
+    """"""
     # ShoppingCardSelector.buy_from_card()
 
     """Просмотр заказов в магазине"""
@@ -60,7 +86,7 @@ except ValueError as v:
     print(v)
 except ModuleNotFoundError as m:
     print('Модуль не найден', m)
-# except OperationalError:
-#     print('Нет доступа к базе данных')
+except OperationalError:
+    print('Нет доступа к базе данных')
 except Exception as e:
     print('Возникла непредвиденная ошибка',type(e), e)

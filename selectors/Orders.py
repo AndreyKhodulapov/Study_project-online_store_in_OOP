@@ -21,6 +21,3 @@ class OrdersSelector:
         result = sum([value['total_pur_price'] for value in query.dicts().execute()])
         print(f"Выручка за {date} составила {result} RUB")
 
-
-# OrdersSelector.see_orders()
-# OrdersSelector.daily_profit()
