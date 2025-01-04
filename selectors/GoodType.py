@@ -1,4 +1,4 @@
-name = "GoodTypeSelector"
+name = "GoodType"
 
 from my_study_projects_2.models import GoodType, Goods
 

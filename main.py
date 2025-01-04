@@ -1,24 +1,23 @@
 NAME = """Модуль для работы с функционалом магазина и обработки исключений"""
 
 try:
-    from my_study_projects_2.selectors.BankAccount import BankAccountSelector
-    # from my_study_projects_2.selectors.GoodType import GoodTypeSelector
-    # from my_study_projects_2.selectors.User import UserSelector
-    # from my_study_projects_2.selectors.Goods import GoodsSelector
-    # from my_study_projects_2.selectors.ShoppingCard import ShoppingCardSelector
-    from my_study_projects_2.selectors.Orders import OrdersSelector
-except ModuleNotFoundError as m:
-    print('Модуль не найден', m)
+    from peewee import *
+    from peewee import OperationalError
+    from selectors.BankAccount import *
+    from selectors.GoodType import *
+    from selectors.User import *
+    from selectors.Goods import *
+    from selectors.ShoppingCard import *
+    from selectors.Orders import *
 
-try:
     """Добавить банковский аккаунт для оплаты"""
-    # BankAccountSelector.add_new_account()
+    BankAccountSelector.add_new_account()
 
     """Удалить банковский аккаунт для оплаты"""
     # BankAccountSelector.del_bank_acc(1)
 
     # GoodTypeSelector.add_new_type()
-    # GoodTypeSelector.get_all_rows_type()
+    GoodTypeSelector.get_all_rows_type()
     # GoodTypeSelector.get_row_type()
     # GoodTypeSelector.see_goods_in_type()
     # GoodTypeSelector.del_type()
@@ -59,5 +58,9 @@ try:
 
 except ValueError as v:
     print(v)
+except ModuleNotFoundError as m:
+    print('Модуль не найден', m)
+# except OperationalError:
+#     print('Нет доступа к базе данных')
 except Exception as e:
     print('Возникла непредвиденная ошибка',type(e), e)

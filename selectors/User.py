@@ -2,7 +2,7 @@ name = "UserSelector"
 
 from my_study_projects_2.models import User
 from functools import reduce
-from  BankAccount import BankAccountSelector
+from BankAccount import BankAccountSelector
 
 
 class UserSelector:

@@ -7,7 +7,7 @@ from peewee import *
 import datetime
 
 
-db = SqliteDatabase('C:/Users/Андрей/PycharmProjects/pythonProject/my_study_projects_2/my_store_db.sqlite')
+db = SqliteDatabase('C:/Users/Andrey/PycharmProjects/pythonProject/my_study_projects_2/my_store_db.sqlite')
 
 
 class BaseModel(Model):
@@ -35,6 +35,7 @@ class User(BaseModel):
 
 
 class GoodType(BaseModel):
+    """Модель категории товара"""
     type_id = IntegerField(primary_key=True)
     type_name = CharField(max_length=50)
     class Meta:
@@ -42,6 +43,7 @@ class GoodType(BaseModel):
 
 
 class Goods(BaseModel):
+    """Модель товара"""
     good_id = IntegerField(primary_key=True)
     good_name = CharField(max_length=150, null= False)
     brand = CharField(max_length=50, null= True)
@@ -62,9 +64,8 @@ class ShoppingCard(BaseModel):
 
 
 class Orders(BaseModel):
+    """Модель истории заказов"""
     pur_id = IntegerField(primary_key=True)
     purchase_data = DateTimeField(default=datetime.datetime.now, null=False)
     total_pur_price = DecimalField(max_digits=12, decimal_places=2, null= False, default=0.0)
     customer = ForeignKeyField(User)
-
-"""Конец"""
