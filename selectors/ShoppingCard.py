@@ -26,10 +26,15 @@ class ShoppingCardSelector:
         """Метод для просмотра содержимого корзины"""
         card_query = ShoppingCard.select()
         card_query_result = card_query.dicts().execute()
-        print('Товары в корзине:')
-        print('Название товара_______________________цена___количество в корзине')
-        for good_id in card_query_result:
-            print(f"'{GoodsSelector.return_goods_by_id(good_id['goods'])}'__{GoodsSelector.return_price_by_id(good_id['goods'])} RUB__{good_id['amount']}")
+        if len([goods for goods in card_query_result]) == 0:
+            print('Корзина пуста')
+        else:
+            card_query = ShoppingCard.select()
+            card_query_result = card_query.dicts().execute()
+            print('Товары в корзине:')
+            print('Название товара_______________________цена___количество в корзине')
+            for good_id in card_query_result:
+                print(f"'{GoodsSelector.return_goods_by_id(good_id['goods'])}'__{GoodsSelector.return_price_by_id(good_id['goods'])} RUB__{good_id['amount']}")
 
     @staticmethod
     def del_from_card():

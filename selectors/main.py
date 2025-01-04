@@ -16,31 +16,31 @@ try:
     """Удалить банковский аккаунт для оплаты"""
     # BankAccountSelector.del_bank_acc(1)
 
-    """"""
+    """Добавить новую категорию товаров"""
     # GoodTypeSelector.add_new_type()
 
-    """"""
+    """Показать все категории товаров"""
     # GoodTypeSelector.get_all_rows_type()
 
-    """"""
+    """Вывести одну категорию товаров"""
     # GoodTypeSelector.get_row_type()
 
-    """"""
+    """Показать товары в выбранной категории"""
     # GoodTypeSelector.see_goods_in_type()
 
-    """"""
+    """Удалить категорию товаров"""
     # GoodTypeSelector.del_type()
 
-    """"""
+    """Добавление нового профиля покупателя"""
     # UserSelector.add_new_user()
 
-    """"""
+    """Авторизация покупателя"""
     # print(UserSelector.log_in())
 
-    """"""
+    """Изменение профиля покупателя"""
     # change_user_info(parameter='password')
 
-    """"""
+    """Удаление профиля покупателя"""
     # UserSelector.del_user()
 
     """Добавить новую позицию в ассортимент магазина"""
@@ -59,28 +59,28 @@ try:
     # GoodsSelector.change_goods_char('color')
 
     """Добавить товар в корзину"""
-    # ShoppingCardSelector.add_to_card(4, 1)
+    # ShoppingCardSelector.add_to_card(11, 1)
 
-    """"""
+    """Посмотреть корзину покупок"""
     # ShoppingCardSelector.see_card()
 
-    """"""
+    """Удаление товаров из корзины"""
     # ShoppingCardSelector.del_from_card()
 
-    """"""
+    """Вывести стоимость корзины"""
     # print(ShoppingCardSelector.total_price())
 
-    """"""
+    """Вывести количество товаров в козине"""
     # ShoppingCardSelector.total_amount()
 
-    """"""
+    """Купить корзину"""
     # ShoppingCardSelector.buy_from_card()
 
     """Просмотр заказов в магазине"""
     # OrdersSelector.see_orders()
 
     """Просмотр выручки за день"""
-    # OrdersSelector.daily_profit()
+    OrdersSelector.daily_profit()
 
 except ValueError as v:
     print(v)

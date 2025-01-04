@@ -2,7 +2,7 @@ name = "GoodsSelector"
 
 from my_study_projects_2.models import Goods
 from GoodType import GoodTypeSelector
-from decimal import Decimal
+from decimal import Decimal, DecimalException
 
 
 class GoodsSelector:
@@ -18,13 +18,22 @@ class GoodsSelector:
         keywords = input("""Введите ключевые слова (через пробел, без запятых) 
                 для поиска товара и нажмите Enter: """)
         GoodTypeSelector.get_all_rows_type()
-        good_type = int(input("Скопируйте цифровой код типа товара из перечня выше и нажмите Enter: "))
-        amount = int(input("Введите количество товара и нажмите Enter: "))
-        price = Decimal(input("Введите цену товара в формате ХХХХ.ХХ и нажмите Enter: "))
-        Goods.create(good_name=good_name, brand=brand, made_in=made_in, color=color,
+        try:
+            good_type = int(input("Скопируйте цифровой код типа товара из перечня выше и нажмите Enter: "))
+            amount = int(input("Введите количество товара и нажмите Enter: "))
+            price = Decimal(input("Введите цену товара в формате ХХХХ.ХХ и нажмите Enter: "))
+        except ValueError:
+            print('Введено некорректное значение для кода типа товара или его количества')
+        except DecimalException:
+            print('Введено некорректное значение для цены товара')
+        try:
+            Goods.create(good_name=good_name, brand=brand, made_in=made_in, color=color,
                      size=size, keywords=keywords, good_type=good_type, amount=amount, price=price)
-        print('-------------')
-        print('Позиция успешно внесена')
+        except UnboundLocalError:
+            print('Невозможно создать позицию')
+        else:
+            print('-------------')
+            print('Позиция успешно внесена')
 
     @staticmethod
     def iterate_query_result(result):
